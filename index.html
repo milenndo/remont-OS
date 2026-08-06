@@ -417,17 +417,99 @@ figcaption{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--ink
   .tb-search{display:none}
   #btnAll{display:none}
   #btnPrintSel{font-size:10px;padding:8px 10px}
-  .sheet{padding:24px 20px 0}
-  .sh-title{font-size:30px}
-  .grid2,.grid3,.grid4{grid-template-columns:1fr}
-  .doc{padding:26px 22px}
+  .sheet{padding:22px 16px 0}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr;gap:10px}
+  .doc{padding:24px 18px}
   .brand-sub{display:none}
+  .nav-item{padding:9px 14px 9px 11px}
+  .nav-cb{width:17px;height:17px}
+  .nav-cb.ck::after{left:5px;top:1.5px;width:5px;height:10px}
 }
-@media(max-width:600px){
+@media(max-width:640px){
+  html{-webkit-text-size-adjust:100%}
+  body{font-size:15.5px;line-height:1.6}
+  .sh-title{font-size:27px;line-height:1.08}
+  .sh-code{margin-top:16px}
   .sh-meta{display:none}
+  .sh-lead{font-size:15.5px;padding-left:12px}
+  h3.s{font-size:20px;margin:30px 0 10px;align-items:flex-start;gap:9px}
+  h3.s::before{margin-top:3px}
+  h4.ss{font-size:15.5px}
+  .stat{padding:12px 13px}
+  .stat b{font-size:23px}
+  .stat span{font-size:8.5px;margin-top:4px}
+
+  /* --- forms: two per row, 16px to stop iOS auto-zoom --- */
+  .tool-b,.tool-out{padding:14px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:10px}
+  .fgrid>.f,.fgrid>.f>*{min-width:0}
+  .f input,.f select{max-width:100%}
+  .seg{min-width:0}
+  .seg button{min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .f.wide{grid-column:1 / -1}
+  .f input,.f select,.f textarea{font-size:16px;padding:8px 9px}
+  .f label{font-size:9px}
+  .seg button{font-size:13px;padding:9px 4px}
+  .chip{font-size:13.5px;padding:8px 12px}
+  .sumline{font-size:14px}
+  .sumline.big{font-size:17px}
+  .sumline.big b{font-size:20px}
+
+  /* --- tables become stacked cards --- */
+  .tw{overflow-x:auto;border:0;background:transparent;margin:16px 0}
+  .tw table.cards{display:block}
+  .tw table.cards thead{display:none}
+  .tw table.cards tbody,.tw table.cards tfoot{display:block}
+  .tw table.cards tr{display:block;background:var(--white);border:1px solid var(--line);
+    margin-bottom:9px;border-radius:2px;overflow:hidden}
+  .tw table.cards tr:nth-child(even){background:var(--white)}
+  .tw table.cards tr:hover{background:var(--white)}
+  .tw table.cards td{display:flex;gap:12px;align-items:baseline;justify-content:space-between;
+    padding:7px 12px;border:0;border-bottom:1px dotted var(--paper-3);text-align:left;
+    font-size:14px;line-height:1.45}
+  .tw table.cards td:last-child{border-bottom:0}
+  .tw table.cards td::before{content:attr(data-l);font-family:'IBM Plex Mono',monospace;
+    font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+    flex:0 0 34%;line-height:1.5;padding-top:2px}
+  .tw table.cards td.hdr{background:var(--paper-2);font-weight:600;font-size:15px;
+    color:var(--ink);display:block;padding:9px 12px;border-bottom:1px solid var(--line)}
+  .tw table.cards td.hdr::before{display:none}
+  .tw table.cards td.n{font-size:13.5px}
+
+  /* --- horizontally scrollable tables get an edge fade + hint --- */
+  .tw.scr{position:relative;border:1px solid var(--line);background:var(--white)}
+  .tw.scr::after{content:'';position:absolute;top:0;right:0;bottom:0;width:34px;
+    background:linear-gradient(90deg,rgba(248,249,245,0),rgba(248,249,245,.96));pointer-events:none}
+  .scrhint{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);margin:-12px 0 16px;display:block}
+
+  figure{padding:13px}
+  .ckl-i{padding:10px 13px}
+  .ckl-i .cb{width:17px;height:17px}
+  .ckl-i .ct{font-size:14.5px}
   .stg{grid-template-columns:44px 1fr}
-  .stat b{font-size:26px}
-  .doc .sigs{grid-template-columns:1fr;gap:26px}
+  .stg-b{padding:11px 13px}
+  .stg-b h6{font-size:15.5px}
+  .stg-meta{font-size:9.5px}
+  .doc{padding:20px 15px;font-size:13.6px}
+  .doc h1{font-size:19px}
+  .doc h2{font-size:13.5px}
+  .doc .sigs{grid-template-columns:1fr;gap:26px;margin-top:32px}
+  .doc table{font-size:11.5px;table-layout:fixed;width:100%}
+  .doc td,.doc th{padding:5px 5px;word-break:break-word;overflow-wrap:anywhere}
+  .doc textarea,.doc input{max-width:100%}
+  .kv{grid-template-columns:1fr;gap:1px 0}
+  .kv dt{padding-top:8px}
+  .box{padding:12px 14px;font-size:14px}
+  .jump a{font-size:11px;padding:8px 11px}
+  .endnote{font-size:9px}
+}
+@media(max-width:335px){
+  .sh-title{font-size:24px}
+  .fgrid{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .tw table.cards td::before{flex-basis:40%}
 }
 
 /* ================= PRINT ================= */
@@ -2471,6 +2553,7 @@ function estimate(){
   tb.innerHTML=rows.map(r=>'<tr><td class="k">'+r.n+'</td><td class="n">'+dec(r.q,0)+' '+r.u+
     '</td><td class="n">'+money(r.l)+'</td><td class="n">'+money(r.m)+'</td><td class="n"><strong>'+money(r.t)+
     '</strong></td><td class="n">'+dec(r.t/direct*100,1)+'%</td></tr>').join('');
+  prepDynTable('#o_rows',EST_L);
   const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
   set('o_direct',money(direct)+' €');set('o_labor',money(L)+' €');set('o_mat',money(M)+' €');
   set('o_cont',money(cont)+' €');set('o_oh',money(oh)+' €');set('o_pr',money(pr)+' €');
@@ -2479,7 +2562,9 @@ function estimate(){
   set('o_prp','('+dec(pP*100,1)+'%)');set('o_vatp','('+dec(vP*100,0)+'%)');
   set('o_total',money(grand));set('o_sqm',money(grand/I.A));set('o_days',days);
   set('o_marg',dec((oh+pr)/net*100,0)+'%');
-  PROJ.total=Math.round(grand);PROJ.days=Math.round(days*1.4);PROJ.area=I.A;renderDocs();
+  PROJ.total=Math.round(grand);PROJ.days=Math.round(days*1.4);PROJ.area=I.A;
+  ['total','days','area'].forEach(k=>$$('[data-pf="'+k+'"]').forEach(inp=>{inp.value=PROJ[k]}));
+  renderDocs();
   const gg={};rows.forEach(r=>{gg[r.g]=(gg[r.g]||0)+r.t});
   drawDist(gg,direct);
 }
@@ -2546,6 +2631,7 @@ function matCalc(){
       '</td><td class="n">'+dec(need,0)+' '+r.u+'</td><td class="n"><strong>'+
       (r.p>1?pk+' бр':dec(need,0)+' '+r.u)+'</strong></td><td style="font-size:12px;color:var(--ink-3)">'+r.pn+'</td></tr>';
   }).join('');
+  prepDynTable('#m_rows',MAT_L);
 }
 ['m_floor','m_wall','m_ceil','m_tile','m_screed','m_plaster']
   .forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',matCalc)});
@@ -2563,10 +2649,10 @@ const PROJ={
   hidtype:'ВиК и електро инсталация — санитарен възел и кухня'
 };
 const FF=[
-  ['cname','Изпълнител — фирма'],['ceik','ЕИК'],['cmol','Представител'],
-  ['caddr','Адрес на фирмата'],['cphone','Телефон'],
-  ['clname','Възложител — име'],['claddr','Адрес на възложителя'],['clphone','Телефон'],
-  ['objaddr','Адрес на обекта'],['area','Площ, м²','number'],
+  ['cname','Изпълнител — фирма','text',1],['ceik','ЕИК'],['cmol','Представител'],
+  ['caddr','Адрес на фирмата','text',1],['cphone','Телефон'],
+  ['clname','Възложител — име','text',1],['claddr','Адрес на възложителя','text',1],['clphone','Телефон'],
+  ['objaddr','Адрес на обекта','text',1],['area','Площ, м²','number'],
   ['total','Стойност с ДДС, €','number'],['advance','Аванс, %','number'],
   ['days','Срок, календарни дни','number'],['warranty','Гаранция, месеци','number'],
   ['start','Начална дата','date']
@@ -2574,7 +2660,7 @@ const FF=[
 function renderForms(){
   const h='<div class="tool"><div class="tool-h"><b>Данни по проекта</b><span>общи за част C</span></div>'+
     '<div class="tool-b"><div class="fgrid">'+
-    FF.map(f=>'<div class="f"><label>'+f[1]+'</label><input type="'+(f[2]||'text')+
+    FF.map(f=>'<div class="f'+(f[3]?' wide':'')+'"><label>'+f[1]+'</label><input type="'+(f[2]||'text')+
       '" data-pf="'+f[0]+'" value="'+PROJ[f[0]]+'"></div>').join('')+
     '</div></div></div>';
   $$('[data-projform]').forEach(c=>c.innerHTML=h);
@@ -2750,60 +2836,91 @@ function renderDocs(){
 /* ==================== SVG CHARTS ==================== */
 const SVG=(w,h,c)=>'<svg viewBox="0 0 '+w+' '+h+'" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono, monospace">'+c+'</svg>';
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const MOB=()=>window.innerWidth<=640;
+let LASTDIST=null;
 
 function drawDist(g,total){
+  if(g)LASTDIST={g:g,t:total};
+  if(!LASTDIST)return;
   const el=$('#chartDist');if(!el)return;
-  const keys=Object.keys(g).sort((a,b)=>g[b]-g[a]);
-  const W=720,rowH=32,H=keys.length*rowH+34,lw=132,bw=W-lw-84;
-  const max=Math.max.apply(null,keys.map(k=>g[k]));
-  let c='';
-  keys.forEach((k,i)=>{
-    const y=i*rowH+16,w=Math.max(2,g[k]/max*bw),p=g[k]/total*100;
-    c+='<text x="'+(lw-10)+'" y="'+(y+14)+'" text-anchor="end" font-size="11" fill="#3D474F">'+esc(k)+'</text>';
-    c+='<rect x="'+lw+'" y="'+y+'" width="'+w+'" height="19" fill="'+(GCOL[k]||'#3D474F')+'" rx="1"/>';
-    c+='<text x="'+(lw+w+8)+'" y="'+(y+14)+'" font-size="11" fill="#14181B" font-weight="500">'+money(g[k])+' € · '+dec(p,1)+'%</text>';
-  });
-  c+='<line x1="'+lw+'" y1="'+(keys.length*rowH+12)+'" x2="'+(lw+bw)+'" y2="'+(keys.length*rowH+12)+'" stroke="#C2C7BC"/>';
+  const G=LASTDIST.g,T=LASTDIST.t;
+  const keys=Object.keys(G).sort((a,b)=>G[b]-G[a]);
+  const max=Math.max.apply(null,keys.map(k=>G[k]));
+  let c='',W,H;
+  if(MOB()){
+    W=352;const rh=42;H=keys.length*rh+6;
+    keys.forEach((k,i)=>{
+      const y=i*rh+4,w=Math.max(2,G[k]/max*W),p=G[k]/T*100;
+      c+='<text x="0" y="'+(y+11)+'" font-size="12" fill="#3D474F">'+esc(k)+'</text>';
+      c+='<text x="'+W+'" y="'+(y+11)+'" text-anchor="end" font-size="12" fill="#14181B" font-weight="500">'+money(G[k])+' € · '+dec(p,1)+'%</text>';
+      c+='<rect x="0" y="'+(y+18)+'" width="'+w+'" height="13" fill="'+(GCOL[k]||'#3D474F')+'" rx="1"/>';
+    });
+  }else{
+    W=720;const rh=32;H=keys.length*rh+34;const lw=132,bw=W-lw-84;
+    keys.forEach((k,i)=>{
+      const y=i*rh+16,w=Math.max(2,G[k]/max*bw),p=G[k]/T*100;
+      c+='<text x="'+(lw-10)+'" y="'+(y+14)+'" text-anchor="end" font-size="11" fill="#3D474F">'+esc(k)+'</text>';
+      c+='<rect x="'+lw+'" y="'+y+'" width="'+w+'" height="19" fill="'+(GCOL[k]||'#3D474F')+'" rx="1"/>';
+      c+='<text x="'+(lw+w+8)+'" y="'+(y+14)+'" font-size="11" fill="#14181B" font-weight="500">'+money(G[k])+' € · '+dec(p,1)+'%</text>';
+    });
+    c+='<line x1="'+lw+'" y1="'+(keys.length*rh+12)+'" x2="'+(lw+bw)+'" y2="'+(keys.length*rh+12)+'" stroke="#C2C7BC"/>';
+  }
   el.innerHTML=SVG(W,H,c);
 }
 
-(function drawMargin(){
+const MARGD=[['Премиум „до ключ"',57,31],['Специализирани покрития',55,28],['Цялостен ремонт',45,23],
+  ['Електро',47,21],['ВиК',42,18],['Фаянс и теракот',37,15],['Гипсокартон',35,12],['Бояджийски',30,10]];
+function drawMargin(){
   const el=$('#chartMargin');if(!el)return;
-  const D=[['Премиум „до ключ"',57,31],['Специализирани покрития',55,28],['Цялостен ремонт',45,23],
-    ['Електро',47,21],['ВиК',42,18],['Фаянс и теракот',37,15],['Гипсокартон',35,12],['Бояджийски',30,10]];
-  const W=720,rh=34,H=D.length*rh+42,lw=176,bw=W-lw-56,max=60;
-  let c='';
-  for(let v=0;v<=60;v+=15){
-    const x=lw+v/max*bw;
-    c+='<line x1="'+x+'" y1="10" x2="'+x+'" y2="'+(D.length*rh+12)+'" stroke="#DADCD3" stroke-dasharray="2 3"/>';
-    c+='<text x="'+x+'" y="'+(D.length*rh+27)+'" text-anchor="middle" font-size="10" fill="#6B757C">'+v+'%</text>';
+  const max=60;let c='',W,H;
+  if(MOB()){
+    W=352;const rh=44;H=MARGD.length*rh+26;
+    MARGD.forEach((d,i)=>{
+      const y=i*rh+4,wg=d[1]/max*W,wn=d[2]/max*W;
+      c+='<text x="0" y="'+(y+11)+'" font-size="12" fill="#3D474F">'+esc(d[0])+'</text>';
+      c+='<text x="'+W+'" y="'+(y+11)+'" text-anchor="end" font-size="11.5" fill="#6B757C">бруто '+d[1]+'% · <tspan fill="#10685A" font-weight="600">нето '+d[2]+'%</tspan></text>';
+      c+='<rect x="0" y="'+(y+18)+'" width="'+wg+'" height="14" fill="#B9CFC9" rx="1"/>';
+      c+='<rect x="0" y="'+(y+18)+'" width="'+wn+'" height="14" fill="#10685A" rx="1"/>';
+    });
+    for(let v=0;v<=60;v+=20){const x=v/max*W;
+      c+='<text x="'+x+'" y="'+(MARGD.length*rh+16)+'" text-anchor="middle" font-size="10" fill="#6B757C">'+v+'%</text>'}
+  }else{
+    W=720;const rh=34;H=MARGD.length*rh+58;const lw=176,bw=W-lw-56;
+    for(let v=0;v<=60;v+=15){
+      const x=lw+v/max*bw;
+      c+='<line x1="'+x+'" y1="10" x2="'+x+'" y2="'+(MARGD.length*rh+12)+'" stroke="#DADCD3" stroke-dasharray="2 3"/>';
+      c+='<text x="'+x+'" y="'+(MARGD.length*rh+27)+'" text-anchor="middle" font-size="10" fill="#6B757C">'+v+'%</text>';
+    }
+    MARGD.forEach((d,i)=>{
+      const y=i*rh+14,wg=d[1]/max*bw,wn=d[2]/max*bw;
+      c+='<text x="'+(lw-10)+'" y="'+(y+15)+'" text-anchor="end" font-size="11" fill="#3D474F">'+esc(d[0])+'</text>';
+      c+='<rect x="'+lw+'" y="'+y+'" width="'+wg+'" height="20" fill="#B9CFC9" rx="1"/>';
+      c+='<rect x="'+lw+'" y="'+y+'" width="'+wn+'" height="20" fill="#10685A" rx="1"/>';
+      c+='<text x="'+(lw+wg+7)+'" y="'+(y+14)+'" font-size="10" fill="#6B757C">'+d[1]+' / <tspan fill="#10685A" font-weight="600">'+d[2]+'</tspan></text>';
+    });
+    c+='<rect x="'+lw+'" y="'+(MARGD.length*rh+34)+'" width="11" height="8" fill="#B9CFC9"/><text x="'+(lw+16)+'" y="'+(MARGD.length*rh+42)+'" font-size="10" fill="#6B757C">брутен</text>';
+    c+='<rect x="'+(lw+72)+'" y="'+(MARGD.length*rh+34)+'" width="11" height="8" fill="#10685A"/><text x="'+(lw+88)+'" y="'+(MARGD.length*rh+42)+'" font-size="10" fill="#6B757C">нетен</text>';
   }
-  D.forEach((d,i)=>{
-    const y=i*rh+14,wg=d[1]/max*bw,wn=d[2]/max*bw;
-    c+='<text x="'+(lw-10)+'" y="'+(y+15)+'" text-anchor="end" font-size="11" fill="#3D474F">'+esc(d[0])+'</text>';
-    c+='<rect x="'+lw+'" y="'+y+'" width="'+wg+'" height="20" fill="#B9CFC9" rx="1"/>';
-    c+='<rect x="'+lw+'" y="'+y+'" width="'+wn+'" height="20" fill="#10685A" rx="1"/>';
-    c+='<text x="'+(lw+wg+7)+'" y="'+(y+14)+'" font-size="10" fill="#6B757C">'+d[1]+' / <tspan fill="#10685A" font-weight="600">'+d[2]+'</tspan></text>';
-  });
-  c+='<rect x="'+lw+'" y="'+(D.length*rh+34)+'" width="11" height="8" fill="#B9CFC9"/><text x="'+(lw+16)+'" y="'+(D.length*rh+42)+'" font-size="10" fill="#6B757C">брутен</text>';
-  c+='<rect x="'+(lw+72)+'" y="'+(D.length*rh+34)+'" width="11" height="8" fill="#10685A"/><text x="'+(lw+88)+'" y="'+(D.length*rh+42)+'" font-size="10" fill="#6B757C">нетен</text>';
-  el.innerHTML=SVG(W,H+16,c);
-})();
+  el.innerHTML=SVG(W,H,c);
+}
 
-(function drawCash(){
+function drawCash(){
   const el=$('#chartCash');if(!el)return;
-  const W=720,H=300,ml=46,mr=16,mt=16,mb=44,pw=W-ml-mr,ph=H-mt-mb;
   const cost=[0,12,26,42,56,70,84,94,100];
   const good=[28,28,48,48,68,68,88,88,100];
   const bad =[10,10,10,32,32,32,55,55,100];
+  const m=MOB();
+  const W=m?352:720,H=m?250:300,ml=m?32:46,mr=m?6:16,mt=14,mb=m?52:44;
+  const pw=W-ml-mr,ph=H-mt-mb;
   const X=i=>ml+i/(cost.length-1)*pw, Y=v=>mt+ph-v/100*ph;
   let c='';
   for(let v=0;v<=100;v+=25){
     c+='<line x1="'+ml+'" y1="'+Y(v)+'" x2="'+(ml+pw)+'" y2="'+Y(v)+'" stroke="#DADCD3"/>';
-    c+='<text x="'+(ml-8)+'" y="'+(Y(v)+4)+'" text-anchor="end" font-size="10" fill="#6B757C">'+v+'%</text>';
+    c+='<text x="'+(ml-6)+'" y="'+(Y(v)+4)+'" text-anchor="end" font-size="'+(m?10:10)+'" fill="#6B757C">'+v+'</text>';
   }
-  ['старт','етап 1','етап 2','етап 3','етап 4','етап 5','етап 6','етап 7','предаване'].forEach((l,i)=>{
-    if(i%2===0)c+='<text x="'+X(i)+'" y="'+(H-mb+18)+'" text-anchor="middle" font-size="9.5" fill="#6B757C">'+l+'</text>';
+  ['старт','етап 1','етап 2','етап 3','етап 4','етап 5','етап 6','етап 7','край'].forEach((l,i)=>{
+    if(m?(i===0||i===4||i===8):(i%2===0))
+      c+='<text x="'+X(i)+'" y="'+(H-mb+16)+'" text-anchor="'+(i===0?'start':i===8?'end':'middle')+'" font-size="10" fill="#6B757C">'+l+'</text>';
   });
   const path=a=>a.map((v,i)=>(i?'L':'M')+X(i)+' '+Y(v)).join(' ');
   c+='<path d="'+path(cost)+'" fill="none" stroke="#3D474F" stroke-width="2" stroke-dasharray="5 4"/>';
@@ -2813,29 +2930,43 @@ function drawDist(g,total){
   bad.forEach((v,i)=>{c+='<circle cx="'+X(i)+'" cy="'+Y(v)+'" r="3" fill="#9E3B22"/>'});
   const lg=[['#10685A','постъпления — правилна схема'],['#9E3B22','постъпления — грешна схема'],['#3D474F','натрупани разходи']];
   lg.forEach((g,i)=>{
-    const x=ml+i*228;
-    c+='<rect x="'+x+'" y="'+(H-14)+'" width="14" height="3" fill="'+g[0]+'"/>';
-    c+='<text x="'+(x+20)+'" y="'+(H-9)+'" font-size="9.5" fill="#6B757C">'+g[1]+'</text>';
+    if(m){
+      const y=H-36+i*12;
+      c+='<rect x="'+ml+'" y="'+y+'" width="13" height="3" fill="'+g[0]+'"/>';
+      c+='<text x="'+(ml+19)+'" y="'+(y+4)+'" font-size="9.5" fill="#6B757C">'+g[1]+'</text>';
+    }else{
+      const x=ml+i*228;
+      c+='<rect x="'+x+'" y="'+(H-14)+'" width="14" height="3" fill="'+g[0]+'"/>';
+      c+='<text x="'+(x+20)+'" y="'+(H-9)+'" font-size="9.5" fill="#6B757C">'+g[1]+'</text>';
+    }
   });
   el.innerHTML=SVG(W,H,c);
-})();
+}
 
-(function drawFunnel(){
+const FUND=[['Показвания на реклама и съдържание','30 000',1],['Посещения на сайта','900',0.72],
+  ['Запитвания','60',0.52],['Проведени огледи','12',0.34],['Подписани договора','3',0.2],
+  ['Премиум проект','1',0.11]];
+function drawFunnel(){
   const el=$('#chartFunnel');if(!el)return;
-  const D=[['Показвания на реклама и съдържание','30 000',1],['Посещения на сайта','900',0.72],
-    ['Запитвания','60',0.52],['Проведени огледи','12',0.34],['Подписани договора','3',0.2],
-    ['Премиум проект','1',0.11]];
-  const W=720,rh=52,H=D.length*rh+24,cx=300;
-  let c='';
-  D.forEach((d,i)=>{
-    const y=i*rh+12,w1=D[i][2]*440,w2=(D[i+1]?D[i+1][2]:D[i][2]*0.8)*440;
+  const m=MOB();let c='',W,H,rh,cx,span;
+  if(m){W=352;rh=58;H=FUND.length*rh+10;cx=W/2;span=330}
+  else{W=720;rh=52;H=FUND.length*rh+24;cx=300;span=440}
+  FUND.forEach((d,i)=>{
+    const y=i*rh+(m?14:12);
+    const bh=m?32:rh-8;
+    const w1=d[2]*span,w2=(FUND[i+1]?FUND[i+1][2]:d[2]*0.8)*span;
     const op=0.34+i*0.13;
-    c+='<path d="M'+(cx-w1/2)+' '+y+' L'+(cx+w1/2)+' '+y+' L'+(cx+w2/2)+' '+(y+rh-8)+' L'+(cx-w2/2)+' '+(y+rh-8)+' Z" fill="#10685A" fill-opacity="'+op+'"/>';
-    c+='<text x="'+cx+'" y="'+(y+27)+'" text-anchor="middle" font-size="15" font-weight="600" fill="#14181B">'+d[1]+'</text>';
-    c+='<text x="'+(cx+250)+'" y="'+(y+27)+'" font-size="11" fill="#3D474F">'+esc(d[0])+'</text>';
+    c+='<path d="M'+(cx-w1/2)+' '+y+' L'+(cx+w1/2)+' '+y+' L'+(cx+w2/2)+' '+(y+bh)+' L'+(cx-w2/2)+' '+(y+bh)+' Z" fill="#10685A" fill-opacity="'+op+'"/>';
+    if(m){
+      c+='<text x="'+cx+'" y="'+(y+21)+'" text-anchor="middle" font-size="15" font-weight="600" fill="#14181B">'+d[1]+'</text>';
+      c+='<text x="'+cx+'" y="'+(y+bh+14)+'" text-anchor="middle" font-size="11" fill="#3D474F">'+esc(d[0])+'</text>';
+    }else{
+      c+='<text x="'+cx+'" y="'+(y+27)+'" text-anchor="middle" font-size="15" font-weight="600" fill="#14181B">'+d[1]+'</text>';
+      c+='<text x="'+(cx+250)+'" y="'+(y+27)+'" font-size="11" fill="#3D474F">'+esc(d[0])+'</text>';
+    }
   });
   el.innerHTML=SVG(W,H,c);
-})();
+}
 
 /* ==================== GANTT ==================== */
 const STAGES=[
@@ -2877,9 +3008,62 @@ function gantt(){
 bindSeg('g_tier',()=>gantt());
 ['g_area','g_bath','g_start'].forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',gantt)});
 
+/* ============ MOBILE TABLES: auto labels + scroll hints ============ */
+function prepTables(){
+  $$('.tw').forEach(w=>{
+    const t=w.querySelector('table');if(!t||t.dataset.prepped)return;
+    t.dataset.prepped='1';
+    const hasSpan=!!t.querySelector('[rowspan],[colspan]');
+    const isInput=!!t.querySelector('input');
+    const ths=$$('thead th',t).map(th=>th.textContent.trim());
+    if(hasSpan||isInput||ths.length<3){
+      w.classList.add('scr');
+      const h=document.createElement('span');
+      h.className='scrhint';h.textContent='\u2192 плъзни таблицата настрани';
+      w.parentNode.insertBefore(h,w.nextSibling);
+      return;
+    }
+    t.classList.add('cards');
+    $$('tbody tr',t).forEach(tr=>{
+      const tds=$$('td',tr);
+      const f=tds[0]?tds[0].textContent.trim():'';
+      const hi=(f.length<=5&&tds.length>2)?1:0;
+      tds.forEach((td,i)=>{
+        if(i===hi)td.classList.add('hdr');
+        else td.setAttribute('data-l',ths[i]||'');
+      });
+    });
+  });
+}
+function prepDynTable(sel,labels){
+  const t=document.querySelector(sel);if(!t)return;
+  $$('tr',t).forEach(tr=>{
+    $$('td',tr).forEach((td,i)=>{
+      if(i===0)td.classList.add('hdr');else td.setAttribute('data-l',labels[i]||'');
+    });
+  });
+}
+const EST_L=['','Количество','Труд €','Материал €','Общо €','Дял'];
+const MAT_L=['','Норма','Необходимо','Заявка','Опаковка'];
+
+/* ============ RESPONSIVE REDRAW ============ */
+let rzT=null,lastMob=null;
+function redraw(){drawMargin();drawCash();drawFunnel();drawDist();gantt()}
+window.addEventListener('resize',()=>{
+  clearTimeout(rzT);
+  rzT=setTimeout(()=>{
+    const m=window.innerWidth<=640;
+    if(m!==lastMob){lastMob=m;redraw()}
+  },180);
+});
+window.addEventListener('orientationchange',()=>setTimeout(redraw,300));
+
 /* ==================== INIT ==================== */
 const gs=$('#g_start');if(gs)gs.value=new Date().toISOString().slice(0,10);
+lastMob=window.innerWidth<=640;
 renderForms();renderDocs();estimate();matCalc();gantt();updSel();
+drawMargin();drawCash();drawFunnel();
+prepTables();
 show('s00');
 })();
 </script>
